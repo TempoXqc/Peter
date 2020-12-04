@@ -1,51 +1,51 @@
 <template>
   <div class="box-twitch">
-    <VueTwitchPlayer
-      class="box-video"
-      :channel="melo"
-      :width="width"
-      :height="height"
-    ></VueTwitchPlayer>
+    <div>
+      <iframe
+        :src="test"
+        :height="height"
+        :width="height"
+        class="box-video"
+      ></iframe>
 
-    <VueTwitchPlayer
-      class="box-video"
-      :channel="tkh"
-      :width="width"
-      :height="height"
-    ></VueTwitchPlayer>
+      <iframe
+        :src="test"
+        :height="height"
+        :width="height"
+        class="box-video"
+      ></iframe>
+    </div>
 
-    <VueTwitchPlayer
-      class="box-video"
-      :channel="baba"
-      :width="width"
-      :height="height"
-    ></VueTwitchPlayer>
+    <div>
+      <iframe
+        :src="test"
+        :height="height"
+        :width="height"
+        class="box-video"
+      ></iframe>
 
-    <VueTwitchPlayer
-      class="box-video"
-      :channel="shroud"
-      :width="width"
-      :height="height"
-    ></VueTwitchPlayer>
+      <iframe
+        :src="test"
+        :height="height"
+        :width="height"
+        class="box-video"
+      ></iframe>
+    </div>
   </div>
 </template>
 
 <script>
-import VueTwitchPlayer from "vue-twitch-player";
-
 export default {
-  components: {
-    VueTwitchPlayer,
-  },
   data() {
     return {
+      test: "https://player.twitch.tv/?channel=richwcampbell&parent=localhost",
       melo: "locklear",
       tkh: "kinggeorge",
       baba: "ambition_baba",
       shroud: "shroud",
-      width:"100%",
-      height:"450"
-    };   
+      width: "100%",
+      height: "450",
+    };
   },
 };
 </script>
@@ -60,6 +60,6 @@ export default {
   box-sizing: border-box;
 }
 .box-video {
-  width: 50% !important;
+  width: 100% !important;
 }
 </style>
