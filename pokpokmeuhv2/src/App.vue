@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app">
     <Twitch />
   </div>
 </template>
@@ -22,6 +22,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  background-image: url(assets/body-img.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 </style>

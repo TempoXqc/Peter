@@ -38,7 +38,8 @@
 export default {
   data() {
     return {
-      test: "https://player.twitch.tv/?channel=richwcampbell&parent=localhost",
+      test:
+        "https://player.twitch.tv/?channel=richwcampbell&parent=pokpokmeuh.s3.us-east-2.amazonaws.com",
       melo: "locklear",
       tkh: "kinggeorge",
       baba: "ambition_baba",
@@ -57,6 +58,7 @@ export default {
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: 100vh;
   box-sizing: border-box;
 }
 .box-video {
