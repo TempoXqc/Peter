@@ -1,6 +1,6 @@
 <template>
   <iframe
-    :src="url"
+    :src="testUrl"
     :height="height"
     :width="width"
     :volume="volume"
@@ -36,8 +36,18 @@ export default {
     };
   },
 
+  methods: {
+    loadUrl() {
+      this.url = `${this.baseUrl}?channel=${this.channel}&parent=${window.location.hostname}`;
+    },
+  },
   created() {
-    this.url = `${this.baseUrl}?channel=${this.channel}&parent=${window.location.hostname}`;
+    this.loadUrl();
+  },
+  computed:{
+    testUrl(){
+      return `${this.baseUrl}?channel=${this.channel}&parent=${window.location.hostname}`;
+    }
   },
 };
 </script>

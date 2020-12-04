@@ -5,12 +5,14 @@
     </div>
     <div class="box-twitch">
       <div class="bloc-box-twitch">
+        <input type="text" v-model="melo">
         <TwitchPlayer
           :channel="melo"
           :width="width"
           :height="height"
           :volume="volume"
         />
+        <input type="text" v-model="tkh">
         <TwitchPlayer
           :channel="tkh"
           :width="width"
@@ -19,12 +21,14 @@
         />
       </div>
       <div class="bloc-box-twitch">
+        <input type="text" v-model="kokka">
         <TwitchPlayer
-          :channel="baba"
+          :channel="kokka"
           :width="width"
           :height="height"
           :volume="volume"
         />
+        <input type="text" v-model="shroud">
         <TwitchPlayer
           :channel="shroud"
           :width="width"
@@ -46,7 +50,7 @@ export default {
     return {
       melo: "locklear",
       tkh: "kinggeorge",
-      baba: "ambition_baba",
+      kokka: "kokkalive",
       shroud: "shroud",
       width: "100%",
       height: "350",
