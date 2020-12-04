@@ -30,7 +30,7 @@
         />
         <input type="text" v-model="shroud">
         <TwitchPlayer
-          :channel="shroud"
+          :channel="kokka"
           :width="width"
           :height="height"
           :volume="volume"
