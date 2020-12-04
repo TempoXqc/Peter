@@ -2,30 +2,30 @@
   <div class="box-twitch">
     <VueTwitchPlayer
       class="box-video"
-      :channel="melo.channel"
-      :width="melo.width"
-      :height="melo.height"
+      :channel="melo"
+      :width="width"
+      :height="height"
     ></VueTwitchPlayer>
 
     <VueTwitchPlayer
       class="box-video"
-      :channel="tkh.channel"
-      :width="tkh.width"
-      :height="tkh.height"
+      :channel="tkh"
+      :width="width"
+      :height="height"
     ></VueTwitchPlayer>
 
     <VueTwitchPlayer
       class="box-video"
-      :channel="baba.channel"
-      :width="baba.width"
-      :height="baba.height"
+      :channel="baba"
+      :width="width"
+      :height="height"
     ></VueTwitchPlayer>
 
     <VueTwitchPlayer
       class="box-video"
-      :channel="shroud.channel"
-      :width="shroud.width"
-      :height="shroud.height"
+      :channel="shroud"
+      :width="width"
+      :height="height"
     ></VueTwitchPlayer>
   </div>
 </template>
@@ -39,27 +39,13 @@ export default {
   },
   data() {
     return {
-      melo: {
-        channel: "locklear",
-        width: "100%",
-        height: "550",
-      },
-      tkh: {
-        channel: "kinggeorge",
-        width: "100%",
-        height: "550",
-      },
-      baba: {
-        channel: "ambition_baba",
-        width: "100%",
-        height: "550",
-      },
-      shroud: {
-        channel: "shroud",
-        width: "100%",
-        height: "550",
-      },
-    };
+      melo: "locklear",
+      tkh: "kinggeorge",
+      baba: "ambition_baba",
+      shroud: "shroud",
+      width:"100%",
+      height:"450"
+    };   
   },
 };
 </script>
