@@ -37,12 +37,7 @@ export default {
   },
 
   created() {
-    this.url =
-     this.baseUrl +
-      "?channel=" +
-      this.channel +
-      +"&parent=" +
-      window.location.host;
+    this.url = `${this.baseUrl}?channel=${this.channel}&parent=${window.location.hostname}`;
   },
 };
 </script>
