@@ -5,32 +5,32 @@
     </div>
     <div class="box-twitch">
       <div class="bloc-box-twitch">
-        <input type="text" v-model="melo">
+        <input type="text" v-model="player[0].channel" />
         <TwitchPlayer
-          :channel="melo"
+          :channel="player[0].channel"
           :width="width"
           :height="height"
           :volume="volume"
         />
-        <input type="text" v-model="tkh">
+        <input type="text" v-model="player[1].channel" />
         <TwitchPlayer
-          :channel="tkh"
+          :channel="player[1].channel"
           :width="width"
           :height="height"
           :volume="volume"
         />
       </div>
       <div class="bloc-box-twitch">
-        <input type="text" v-model="kokka">
+        <input type="text" v-model="player[2].channel" />
         <TwitchPlayer
-          :channel="kokka"
+          :channel="player[2].channel"
           :width="width"
           :height="height"
           :volume="volume"
         />
-        <input type="text" v-model="shroud">
+        <input type="text" v-model="player[3].channel" class="titre-streamer" />
         <TwitchPlayer
-          :channel="kokka"
+          :channel="player[3].channel"
           :width="width"
           :height="height"
           :volume="volume"
@@ -48,10 +48,12 @@ export default {
   },
   data() {
     return {
-      melo: "locklear",
-      tkh: "kinggeorge",
-      kokka: "kokkalive",
-      shroud: "shroud",
+      player: [
+        { channel: "kokkalive" },
+        { channel: "melocotontv" },
+        { channel: "tkh_tv" },
+        { channel: "#" },
+      ],
       width: "100%",
       height: "350",
       volume: "0",
@@ -79,5 +81,7 @@ h2 {
 .bloc-box-twitch {
   margin: 0 25px;
   width: 35%;
+}
+.titre-streamer {
 }
 </style>

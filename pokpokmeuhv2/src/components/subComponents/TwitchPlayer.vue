@@ -5,7 +5,10 @@
     :width="width"
     :volume="volume"
     class="box-video"
-  ></iframe>
+    allowfullscreen="<allowfullscreen>"
+  >
+    ></iframe
+  >
 </template>
 
 <script>
@@ -44,10 +47,10 @@ export default {
   created() {
     this.loadUrl();
   },
-  computed:{
-    testUrl(){
+  computed: {
+    testUrl() {
       return `${this.baseUrl}?channel=${this.channel}&parent=${window.location.hostname}`;
-    }
+    },
   },
 };
 </script>
