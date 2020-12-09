@@ -5,10 +5,14 @@ vue.use(vuex);
 export const store = new vuex.Store({
   state: {
     streamers: [],
+    inputs: []
   },
   getters: {
     getStreamers: (state) => {
       return state.streamers;
+    },
+    getInputs: (state) => {
+      return state.inputs;
     },
   },
   mutations: {
@@ -18,6 +22,14 @@ export const store = new vuex.Store({
     addAllStreamer: (state, streamers) =>{
         streamers.forEach(e => {
             state.streamers.push(e);
+        });
+    },
+    addInput: (state, input) => {
+      state.inputs.push(input);
+    },
+    addAllInputs: (state, inputs) =>{
+        inputs.forEach(e => {
+            state.inputs.push(e);
         });
     }
   },

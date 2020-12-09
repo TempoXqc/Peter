@@ -2,42 +2,34 @@
   <div class="main">
     <v-container fluid class="ma-0 pa-0">
       <v-layout row>
-        <v-flex md1 xs1 >
+        <v-flex md5 style="position:absolute; z-index:1000;">
           <NavigationDrawerStreamer />
         </v-flex>
-        <v-flex md11 xs10>
+        <v-flex md12 style="top:0; position:fixed;left:25vh">
           <div class="box-twitch">
             <div class="bloc-box-twitch">
-              <input type="text" v-model="player[0].channel" />
               <TwitchPlayer
-                :channel="player[0].channel"
+                :channel="inputs[0] == null ? streamers[0] : inputs[0]"
                 :width="width"
                 :height="height"
                 :volume="volume"
               />
-              <input type="text" v-model="player[1].channel" />
               <TwitchPlayer
-                :channel="player[1].channel"
+                :channel="inputs[1] == null ? streamers[1] : inputs[1]"
                 :width="width"
                 :height="height"
                 :volume="volume"
               />
             </div>
             <div class="bloc-box-twitch">
-              <input type="text" v-model="player[2].channel" />
               <TwitchPlayer
-                :channel="player[2].channel"
+                :channel="inputs[2] == null ? streamers[2] : inputs[2]"
                 :width="width"
                 :height="height"
                 :volume="volume"
               />
-              <input
-                type="text"
-                v-model="player[3].channel"
-                class="titre-streamer"
-              />
               <TwitchPlayer
-                :channel="player[3].channel"
+                :channel="inputs[3] == null ? streamers[3] : inputs[3]"
                 :width="width"
                 :height="height"
                 :volume="volume"
@@ -53,6 +45,7 @@
 <script>
 import NavigationDrawerStreamer from "../subComponents/NavigationDrawerStreamer";
 import TwitchPlayer from "../subComponents/TwitchPlayer";
+import {mapState} from "vuex"
 export default {
   components: {
     TwitchPlayer,
@@ -60,16 +53,15 @@ export default {
   },
   data() {
     return {
-      player: [
-        { channel: "kokkalive" },
-        { channel: "melocotontv" },
-        { channel: "tkh_tv" },
-        { channel: "#" },
-      ],
       width: "100%",
       height: "350",
       volume: "0",
     };
+  },
+
+  computed: {
+    ...mapState(["inputs"]),
+    ...mapState(["streamers"])
   },
 
   beforeCreate(){
